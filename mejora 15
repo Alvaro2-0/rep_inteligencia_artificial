@@ -1,0 +1,39 @@
+import datetime
+
+nombre_cliente = input("Ingresa tu nombre: ")
+nombre_producto = input("Ingresa el nombre del producto: ")
+cantidad = int(input("Ingresa la cantidad: "))
+precio_unitario = float(input("Ingresa el precio unitario: "))
+
+total_compra = cantidad * precio_unitario
+
+if total_compra > 100:
+    descuento = total_compra * 0.10
+    total_final = total_compra - descuento
+else:
+    descuento = 0
+    total_final = total_compra
+
+
+fecha_hora = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+folio = 1  
+
+
+print("\n ==========================TICKET DE COMPRA==========================")
+print(f"Tienda: Tienda XYZ")
+print(f"Folio: {folio}")
+print(f"Fecha y hora: {fecha_hora}")
+print("----------------------")
+print(f"Cliente: {nombre_cliente}")
+print(f"Producto: {nombre_producto}")
+print(f"Cantidad: {cantidad}")
+print(f"Precio unitario: ${precio_unitario:.2f}")
+print(f"Total de la compra: ${total_compra:.2f}")
+if descuento > 0:
+    print(f"Descuento aplicado: ${descuento:.2f}")
+print(f"Total a pagar: ${total_final:.2f}")
+print("---" * 10)
+print("¡Gracias por tu compra! ¡Vuelve pronto!")
+print("=" * 50)
