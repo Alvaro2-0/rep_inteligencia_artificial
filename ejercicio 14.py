@@ -10,3 +10,7 @@ elif 60 <= nota < 70:
     print("Tu calificación es: D")
 else:
     print("Tu calificación es: F")
+
+
+
+
