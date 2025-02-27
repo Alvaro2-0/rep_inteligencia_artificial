@@ -1,0 +1,33 @@
+datos_ciudad = {
+    10: "México",
+    20: "Oaxaca",
+    25: "Guerrero",
+    30: "Sinaloa",
+    15: "Mérida",
+    35: "Tlaxcala",
+    5: "nuevo leon",
+}
+
+def predecir_ciudad(grado):
+    return datos_ciudad.get(grado, "Grado no válido")
+
+
+try:
+    ciudad_grad = int(input("Ingrese grados de 0 a 40: "))
+except ValueError:
+    print("Por favor, ingrese un número válido.")
+    exit()
+
+ciudades_0_10 = [ciudad for grado, ciudad in datos_ciudad.items() if 0 <= grado < 10]
+ciudades_10_20 = [ciudad for grado, ciudad in datos_ciudad.items() if 10 <= grado < 20]
+ciudades_20_30 = [ciudad for grado, ciudad in datos_ciudad.items() if 20 <= grado < 30]
+ciudades_30_40 = [ciudad for grado, ciudad in datos_ciudad.items() if 30 <= grado <= 40]
+
+if 30 <= ciudad_grad <= 40:
+    print("Las ciudades entre grados de 30 a 40 son:", ciudades_30_40)
+elif 20 <= ciudad_grad < 30:
+    print("Las ciudades entre grados de 20 a 30 son:", ciudades_20_30)
+elif 10 <= ciudad_grad < 20:
+    print("Las ciudades entre grados de 20 a 30 son:", ciudades_20_30)
+else:
+    print("Las ciudades entre grados de 0 a 10 son:", ciudades_0_10)

@@ -1,0 +1,20 @@
+datos_temperatura = {
+    "mañana": 10,
+    "medio dia":30,
+    "tarde": 25,
+    "tarde noche":20,
+    "noche": 15,
+}
+
+def predecir_temperatura(hora):
+    return datos_temperatura.get(hora, "Hora no válida")
+
+
+hora_usuario = input("Ingrese la hora del día (mañana, medio dia, tarde, tarde noche, noche): ").strip().lower()
+
+
+temperatura = predecir_temperatura(hora_usuario)
+if temperatura != "Hora no válida":
+    print(f"La temperatura promedio en {hora_usuario} es {temperatura}°C")
+else:
+    print("Hora no válida. Intente con 'mañana', 'tarde' o 'noche'.")

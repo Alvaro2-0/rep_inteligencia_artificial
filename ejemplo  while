@@ -1,0 +1,7 @@
+# Imprime los números del 1 al 5
+i = 1
+while i <= 5:
+    print(i)
+    i += 1  # Incrementa i en 1
+
+
